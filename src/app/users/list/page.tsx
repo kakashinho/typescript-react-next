@@ -6,6 +6,8 @@
 //"cliente HTTP", criado com o axios.
 import instance from "@/services/api"
 
+import Link from 'next/link';// serve para navegar entre páginas sem recarregar a tela
+
 //useEffect e useState são funções especiais do React:
 //useState guarda informações (como uma memória).
 //useEffect executa algo automaticamente quando a tela carrega.
@@ -52,6 +54,8 @@ export default function Users(){
     return(
         <div>
             <h1>Listar os usuários</h1>
+
+            <Link href = {'/users/create'}>Cadastrar</Link>
 
             {/* Exibe mensagem de erro */}
             {error && <p style={{color: "#f00"}}>{error}</p>}
